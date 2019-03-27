@@ -1,6 +1,5 @@
 # mongodb-backup
 
-# mongodb-backup
 
 A simple bash to do :
 *  A snapshot of mongo database
