@@ -10,9 +10,9 @@ if [ -z $MODE || -z $DB_NAME]; then
   exit 1
 fi
 
-MODE_AS_LOWER_STRING=${MODE^^}
+MODE_AS_UPPER_STRING=${MODE^^}
 DIRECTORY="mongodb_backup/"
-echo 'Mode :' $MODE_AS_LOWER_STRING
+echo 'Mode :' $MODE_AS_UPPER_STRING
 ##### FUNCTIONS #######
 
 # Function to create a snapshot.
@@ -68,10 +68,10 @@ CheckIfDirectoryExist() {
 ##### MAIN #####
 
 CheckIfDirectoryExist
-if [ $MODE_AS_LOWER_STRING == "BACKUP" ]; then # Marche pas
+if [ $MODE_AS_UPPER_STRING == "BACKUP" ]; then
   Snapshot
   #echo 'Snapshot'
-elif [ $MODE_AS_LOWER_STRING == "RESTORE" ]; then
+elif [ $MODE_AS_UPPER_STRING == "RESTORE" ]; then
   #echo 'Restore'
   Restore
 else
